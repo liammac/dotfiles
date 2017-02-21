@@ -5,6 +5,8 @@ set background=dark
 
 execute pathogen#infect()
 syntax on
+set background=dark
+colorscheme solarized
 filetype plugin indent on
 
 if filereadable('.vimrc-project')
