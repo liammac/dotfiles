@@ -122,4 +122,8 @@ export ZSH=${HOME}/.oh-my-zsh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ${HOME}/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+if [[ `uname` == 'Darwin' ]]; then
+    source "/usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh"
+else
+    source "${HOME}/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh"
+fi
