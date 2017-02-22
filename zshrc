@@ -122,6 +122,13 @@ export ZSH=${HOME}/.oh-my-zsh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+if [[ -a ${HOME}/.aliases ]]; then
+    source ${HOME}/.aliases
+fi
+
+export EDITOR='vim'
+
 if [[ `uname` == 'Darwin' ]]; then
     source "/usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh"
 else
