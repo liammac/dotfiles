@@ -1,5 +1,9 @@
 # load zgen
+powerline-daemon -q
 source "${HOME}/.zgen/zgen.zsh"
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status os_icon background_jobs history time)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 # if the init scipt doesn't exist
 if ! zgen saved; then
 #
@@ -33,6 +37,7 @@ if ! zgen saved; then
   zgen load srijanshetty/zsh-pip-completion
   # theme
   zgen oh-my-zsh themes/agnoster
+  zgen load bhilburn/powerlevel9k powerlevel9k
   #
 
   zgen save
@@ -46,7 +51,7 @@ export ZSH=${HOME}/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -119,6 +124,7 @@ export ZSH=${HOME}/.oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+#
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -127,3 +133,5 @@ if [[ `uname` == 'Darwin' ]]; then
 else
     source "${HOME}/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh"
 fi
+
+eval $(thefuck --alias)
