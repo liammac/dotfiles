@@ -1,10 +1,11 @@
-let s:thisos = system("uname -s")
-if s:thisos == "Darwin\n"
-  set rtp+="/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim"
+let os = substitute(system('uname'), "\n", "", "")
+if os == "Darwin"
+  source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
+elseif os == "Linux"
+  source ${HOME}/.local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
 endif
-if s:thisos == "Linux\n"
-  set rtp+="${HOME}/.local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim"
-endif
+
+
 set guifont=Inconsolata\ for\ Powerline:h15
 set laststatus=2 
 set t_Co=256
